@@ -1,5 +1,5 @@
 ﻿namespace Inventario.Desktop.Catalog {
-    partial class ProductForm {
+    partial class CategoriesForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -24,53 +24,42 @@
         /// </summary>
         private void InitializeComponent() {
             components = new System.ComponentModel.Container();
-            productBindingSource = new BindingSource(components);
             toolStrip1 = new ToolStrip();
-            NewTSB = new ToolStripButton();
+            AddTSB = new ToolStripButton();
             EditTSB = new ToolStripButton();
             DeleteTSB = new ToolStripButton();
             dataGridView1 = new DataGridView();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             descriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            unitPriceDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            stockDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            minStockDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            categoryIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            providerIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            categoryDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            providerDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             activeDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
             creationDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             modificationDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)productBindingSource).BeginInit();
+            categoryBindingSource = new BindingSource(components);
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)categoryBindingSource).BeginInit();
             SuspendLayout();
-            // 
-            // productBindingSource
-            // 
-            productBindingSource.DataSource = typeof(Core.Entities.Product);
             // 
             // toolStrip1
             // 
             toolStrip1.ImageScalingSize = new Size(24, 24);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { NewTSB, EditTSB, DeleteTSB });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { AddTSB, EditTSB, DeleteTSB });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(820, 31);
+            toolStrip1.Size = new Size(736, 31);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
-            // NewTSB
+            // AddTSB
             // 
-            NewTSB.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            NewTSB.Image = Properties.Resources.plus_math_26;
-            NewTSB.ImageTransparentColor = Color.Magenta;
-            NewTSB.Name = "NewTSB";
-            NewTSB.Size = new Size(28, 28);
-            NewTSB.Text = "toolStripButton1";
-            NewTSB.Click += NewTSB_Click;
+            AddTSB.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            AddTSB.Image = Properties.Resources.plus_math_26;
+            AddTSB.ImageTransparentColor = Color.Magenta;
+            AddTSB.Name = "AddTSB";
+            AddTSB.Size = new Size(28, 28);
+            AddTSB.Text = "toolStripButton1";
+            AddTSB.Click += AddTSB_Click;
             // 
             // EditTSB
             // 
@@ -88,7 +77,7 @@
             DeleteTSB.ImageTransparentColor = Color.Magenta;
             DeleteTSB.Name = "DeleteTSB";
             DeleteTSB.Size = new Size(28, 28);
-            DeleteTSB.Text = "toolStripButton1";
+            DeleteTSB.Text = "toolStripButton3";
             // 
             // dataGridView1
             // 
@@ -96,14 +85,14 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, descriptionDataGridViewTextBoxColumn, unitPriceDataGridViewTextBoxColumn, stockDataGridViewTextBoxColumn, minStockDataGridViewTextBoxColumn, categoryIdDataGridViewTextBoxColumn, providerIdDataGridViewTextBoxColumn, categoryDataGridViewTextBoxColumn, providerDataGridViewTextBoxColumn, activeDataGridViewCheckBoxColumn, creationDateDataGridViewTextBoxColumn, modificationDateDataGridViewTextBoxColumn });
-            dataGridView1.DataSource = productBindingSource;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, descriptionDataGridViewTextBoxColumn, activeDataGridViewCheckBoxColumn, creationDateDataGridViewTextBoxColumn, modificationDateDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = categoryBindingSource;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 31);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(820, 385);
+            dataGridView1.Size = new Size(736, 419);
             dataGridView1.TabIndex = 1;
             // 
             // idDataGridViewTextBoxColumn
@@ -126,58 +115,7 @@
             descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
             descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            descriptionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // unitPriceDataGridViewTextBoxColumn
-            // 
-            unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
-            unitPriceDataGridViewTextBoxColumn.HeaderText = "UnitPrice";
-            unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
-            unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // stockDataGridViewTextBoxColumn
-            // 
-            stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
-            stockDataGridViewTextBoxColumn.HeaderText = "Stock";
-            stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
-            stockDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // minStockDataGridViewTextBoxColumn
-            // 
-            minStockDataGridViewTextBoxColumn.DataPropertyName = "MinStock";
-            minStockDataGridViewTextBoxColumn.HeaderText = "MinStock";
-            minStockDataGridViewTextBoxColumn.Name = "minStockDataGridViewTextBoxColumn";
-            minStockDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // categoryIdDataGridViewTextBoxColumn
-            // 
-            categoryIdDataGridViewTextBoxColumn.DataPropertyName = "CategoryId";
-            categoryIdDataGridViewTextBoxColumn.HeaderText = "CategoryId";
-            categoryIdDataGridViewTextBoxColumn.Name = "categoryIdDataGridViewTextBoxColumn";
-            categoryIdDataGridViewTextBoxColumn.ReadOnly = true;
-            categoryIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // providerIdDataGridViewTextBoxColumn
-            // 
-            providerIdDataGridViewTextBoxColumn.DataPropertyName = "ProviderId";
-            providerIdDataGridViewTextBoxColumn.HeaderText = "ProviderId";
-            providerIdDataGridViewTextBoxColumn.Name = "providerIdDataGridViewTextBoxColumn";
-            providerIdDataGridViewTextBoxColumn.ReadOnly = true;
-            providerIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // categoryDataGridViewTextBoxColumn
-            // 
-            categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
-            categoryDataGridViewTextBoxColumn.HeaderText = "Category";
-            categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
-            categoryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // providerDataGridViewTextBoxColumn
-            // 
-            providerDataGridViewTextBoxColumn.DataPropertyName = "Provider";
-            providerDataGridViewTextBoxColumn.HeaderText = "Provider";
-            providerDataGridViewTextBoxColumn.Name = "providerDataGridViewTextBoxColumn";
-            providerDataGridViewTextBoxColumn.ReadOnly = true;
+            descriptionDataGridViewTextBoxColumn.Width = 200;
             // 
             // activeDataGridViewCheckBoxColumn
             // 
@@ -203,44 +141,40 @@
             modificationDateDataGridViewTextBoxColumn.ReadOnly = true;
             modificationDateDataGridViewTextBoxColumn.Visible = false;
             // 
-            // ProductForm
+            // categoryBindingSource
+            // 
+            categoryBindingSource.DataSource = typeof(Core.Entities.Category);
+            // 
+            // CategoriesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(820, 416);
+            ClientSize = new Size(736, 450);
             Controls.Add(dataGridView1);
             Controls.Add(toolStrip1);
-            Name = "ProductForm";
-            Text = "PRODUCTOS";
-            Load += ProductForm_Load;
-            ((System.ComponentModel.ISupportInitialize)productBindingSource).EndInit();
+            Name = "CategoriesForm";
+            Text = "CATEGORIAS";
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)categoryBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private BindingSource productBindingSource;
         private ToolStrip toolStrip1;
-        private ToolStripButton NewTSB;
+        private ToolStripButton AddTSB;
         private ToolStripButton EditTSB;
         private ToolStripButton DeleteTSB;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn minStockDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn providerIdDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn providerDataGridViewTextBoxColumn;
         private DataGridViewCheckBoxColumn activeDataGridViewCheckBoxColumn;
         private DataGridViewTextBoxColumn creationDateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn modificationDateDataGridViewTextBoxColumn;
+        private BindingSource categoryBindingSource;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Inventario.Application.DataContext;
 using Inventario.Core.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Inventario.Application.Repositories;
 public class ProductRepository : IRepository<Product> {
@@ -9,15 +10,15 @@ public class ProductRepository : IRepository<Product> {
 
     public void Delete(Product entity) {
         entity.Active = false;
-
+        context.Entry(entity).State = EntityState.Modified;
     }
 
     public IQueryable<Product> GetAll(bool noTracking = true) {
-        throw new NotImplementedException();
+        return context.Set<Product>().AsQueryable();
     }
 
     public Task<Product> GetByIdAsync(Guid id) {
-        throw new NotImplementedException();
+        return context.Products.FirstOrDefaultAsync(x => x.Id == id);
     }
 
     public void Insert(Product entity) {
@@ -28,7 +29,7 @@ public class ProductRepository : IRepository<Product> {
         context.AddRange(entities);
     }
 
-    public void Remove(IEnumerable<Product> entitiesToRemove) {
-        throw new NotImplementedException();
+    public void Modify(Product entity) {
+        context.Entry(entity).State = EntityState.Modified;
     }
 }

@@ -7,5 +7,5 @@ public interface IRepository<T> where T : EntityBase {
     void Insert(T entity);
     void Insert(List<T> entities);
     void Delete(T entity);
-    void Remove(IEnumerable<T> entitiesToRemove);
+    void Modify(T entity);
 }
