@@ -177,6 +177,7 @@
             Controls.Add(toolStrip1);
             Name = "ProvidersForm";
             Text = "PROVEEDORES";
+            WindowState = FormWindowState.Maximized;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

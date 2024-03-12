@@ -212,6 +212,7 @@
             Controls.Add(toolStrip1);
             Name = "ProductForm";
             Text = "PRODUCTOS";
+            WindowState = FormWindowState.Maximized;
             Load += ProductForm_Load;
             ((System.ComponentModel.ISupportInitialize)productBindingSource).EndInit();
             toolStrip1.ResumeLayout(false);

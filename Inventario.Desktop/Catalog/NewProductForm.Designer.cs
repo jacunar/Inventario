@@ -223,6 +223,7 @@
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "NewProductForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "EDITAR PRODUCTO";
             Load += NewProductForm_Load;
             ((System.ComponentModel.ISupportInitialize)UnitPriceNumericUpDown).EndInit();

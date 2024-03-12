@@ -89,6 +89,7 @@
             GuardarButton.TabIndex = 6;
             GuardarButton.Text = "Guardar";
             GuardarButton.UseVisualStyleBackColor = true;
+            GuardarButton.Click += GuardarButton_Click;
             // 
             // CancelarButton
             // 
@@ -116,6 +117,7 @@
             Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             MaximizeBox = false;
             Name = "NewCategoryForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "EDITAR CATEGORIA";
             ResumeLayout(false);
             PerformLayout();

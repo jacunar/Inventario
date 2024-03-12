@@ -176,6 +176,7 @@
             Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             MaximizeBox = false;
             Name = "NewProviderForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "EDITAR PROVEEDOR";
             Load += NewProviderForm_Load;
             ResumeLayout(false);
